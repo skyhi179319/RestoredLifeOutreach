@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100&family=IM+Fell+English+SC&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* Global */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+video{
+	background-color: black;
+}
+
+/* Home */
+.service{
+	font-family: 'IM Fell English SC', serif;
+	color: #6c699e;
+}
+
+
+/* Media */
+
+.hide{
+	display: none;
+}
+.more{
+	font-family: 'Gluten', cursive;
+	background-color: #9896b9;
+    color: white;
+    padding: 6px 10px 6px 10px;
+    border: 2px solid darkblue;
+    border-radius: 12px;
+}
+
+.less{
+	font-family: 'Gluten', cursive;
+	background-color: #9896b9;
+    color: white;
+    padding: 6px 10px 6px 10px;
+    border: 2px solid darkblue;
+    border-radius: 12px;
+}
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.column img, video {
+  margin-top: 12px;
+  height: 350px;
+  width: 100%;
+  border: 1px solid #474569;
+}
+@media only screen and (max-width: 600px) {
+  .column img, video{
+    width: 200px;
+    height: 250px;
+  }
+  video{
+   height: 250px;
+  }
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Contact */
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 75px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
