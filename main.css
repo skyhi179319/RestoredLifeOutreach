@@ -63,13 +63,17 @@ video{
   border: 1px solid #474569;
 }
 @media only screen and (max-width: 600px) {
-  .column img, video{
-    width: 200px;
-    height: 250px;
-  }
-  video{
-   height: 250px;
-  }
+	.mobileColumn{
+		position: fixed;
+		left: 10em
+	}
+	.column img, video{
+		width: 200px;
+		height: 250px;
+	}
+    video{
+	  height: 250px;
+	}
 }
 /* Clear floats after the columns */
 .row:after {
