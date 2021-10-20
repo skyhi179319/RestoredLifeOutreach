@@ -127,6 +127,7 @@ video{
 }
 .phone:hover{
 	color: #5c5982;
+	text-decoration: underline;
 	/*background-color: lightgreen;*/
 }
 
