@@ -1,9 +1,5 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100&family=IM+Fell+English+SC&family=Lora&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&display=swap');
-
-/* Extra fonts */
-
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Poiret+One&display=swap');
 
 /* Social Media Fonts */
@@ -89,10 +85,10 @@ video{
 	display: inline-block;
     font-weight: 400;
 	font-size: 1rem;
-	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Kalam', cursive;
 	/* Extra fonts for email link */
 	/*
-	font-family: 'Kalam', cursive;
+	
 	font-family: 'Poiret One', cursive;
 	*/
     line-height: 1.5;
