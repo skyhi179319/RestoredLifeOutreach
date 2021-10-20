@@ -1,4 +1,8 @@
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100&family=IM+Fell+English+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&display=swap');
+/* Social Media Fonts */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 /* Global */
@@ -80,6 +84,8 @@ video{
 	color: #6c699e;
 	display: inline-block;
     font-weight: 400;
+	font-size: 1rem;
+	font-family: 'Open Sans Condensed', sans-serif;
     line-height: 1.5;
     text-align: center;
     text-decoration: none;
@@ -91,18 +97,19 @@ video{
     background-color: transparent;
     border: 1px solid blue;
     padding: .375rem .75rem;
-	font-size: 1rem;
     border-radius: .25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 .mail:hover{
 	color: #6c699e;
 	text-decoration: underline;
-	background-color: lightblue;
+	/*background-color: lightblue; */
 }
 .phone{
 	display: inline-block;
     font-weight: 400;
+	font-size: 1rem;
+	font-family: 'Lora', serif;
     line-height: 1.5;
     color: #6c699e;
     text-align: center;
@@ -111,17 +118,16 @@ video{
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
-    user-select: none;#5c5982;
+    user-select: none;
     background-color: transparent;
     border: 1px solid green;
     padding: .375rem .75rem;
-    font-size: 1rem;
     border-radius: .25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 .phone:hover{
 	color: #5c5982;
-	background-color: lightgreen;
+	/*background-color: lightgreen;*/
 }
 
 /* Social Media */
