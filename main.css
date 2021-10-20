@@ -76,6 +76,55 @@ video{
 
 /* Contact */
 
+.mail{
+	color: #6c699e;
+	display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;#5c5982;
+    background-color: transparent;
+    border: 1px solid blue;
+    padding: .375rem .75rem;
+	font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.mail:hover{
+	color: #6c699e;
+	text-decoration: underline;
+	background-color: lightblue;
+}
+.phone{
+	display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #6c699e;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;#5c5982;
+    background-color: transparent;
+    border: 1px solid green;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.phone:hover{
+	color: #5c5982;
+	background-color: lightgreen;
+}
+
+/* Social Media */
 .fa {
   padding: 20px;
   font-size: 30px;
