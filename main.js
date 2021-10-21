@@ -29,7 +29,14 @@ var  facebook = new Vue({
 	  link: "https://www.facebook.com/RestoredLifeOutreach/",
    }
 });
-
+var googleEle = new Vue({
+   el: '#google_map',
+   components:{
+      'google-map': {
+         template : '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2866.602015939865!2d-103.19442468466086!3d44.07092613333649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x877d4356f0bd2447%3A0x3452ddd0519928a6!2sRestored%20Life%20Outreach%20Fellowship!5e0!3m2!1sen!2sus!4v1634611452324!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+      }
+   }
+});
 
 // Mobile script
 if (window.matchMedia('(max-width: 600px)').matches)
