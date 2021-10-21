@@ -4,9 +4,26 @@
 var  service = new Vue({
    el: '#service',
    data: {
-      text : "Service starts at 6PM every Saturday"
+      text : "Service starts at 6pm every Saturday"
    }
 });
+
+// Contact Page
+var  phone = new Vue({
+   el: '#phoneEle',
+   data: {
+	  phoneText: "605-545-0606",
+	  phoneLink: "tel:+1605-545-0606",
+   }
+});
+var  email = new Vue({
+   el: '#emailEle',
+   data: {
+	  emailText: "restoredlifeoutreach@gmail.com",
+	  emailLink: "mailto: restoredlifeoutreach@gmail.com"
+   }
+});
+
 
 // Mobile script
 if (window.matchMedia('(max-width: 600px)').matches)
