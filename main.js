@@ -23,6 +23,12 @@ var  email = new Vue({
 	  emailLink: "mailto: restoredlifeoutreach@gmail.com"
    }
 });
+var  facebook = new Vue({
+   el: '#facebookEle',
+   data: {
+	  link: "https://www.facebook.com/RestoredLifeOutreach/",
+   }
+});
 
 
 // Mobile script
