@@ -4,7 +4,7 @@
 var  service = new Vue({
    el: '#service',
    data: {
-      text : "Service starts at 6pm every Saturday"
+      text : "Join us for worship and God's word every Saturday at 6pm"
    }
 });
 
