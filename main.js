@@ -25,8 +25,10 @@ var  email = new Vue({
 });
 var  facebook = new Vue({
    el: '#facebookEle',
-   data: {
-	  link: "https://www.facebook.com/RestoredLifeOutreach/",
+   components:{
+      'facebook-icon':
+         template : '<ah ref="https://www.facebook.com/RestoredLifeOutreach/" class="fa fa-facebook"></a>'
+      }
    }
 });
 var googleEle = new Vue({
