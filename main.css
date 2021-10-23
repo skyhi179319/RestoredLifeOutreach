@@ -64,8 +64,8 @@ video{
 }
 @media only screen and (max-width: 600px) {
 	.mobileColumn{
-		position: fixed;
-		left: 10em
+		position: sticky;
+		left: 5em
 	}
 	.column img, video{
 		width: 200px;
