@@ -8,6 +8,16 @@ var  service = new Vue({
    }
 });
 
+// Donation button
+var  paypal = new Vue({
+   el: '#DonationEle',
+   components:{
+      'donation-button': {
+         template : ''
+      }
+   }
+});
+
 // Contact Page
 var  phone = new Vue({
    el: '#phoneEle',
@@ -26,8 +36,8 @@ var  email = new Vue({
 var  facebook = new Vue({
    el: '#facebookEle',
    components:{
-      'facebook-icon':
-         template : '<ah ref="https://www.facebook.com/RestoredLifeOutreach/" class="fa fa-facebook"></a>'
+      'facebook-icon': {
+         template : '<a href="https://www.facebook.com/RestoredLifeOutreach/" class="fa fa-facebook"></a>'
       }
    }
 });
