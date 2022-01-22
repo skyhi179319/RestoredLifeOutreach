@@ -1,11 +1,12 @@
 // Vue.js
 
 // Home Page
-var  service = new Vue({
-   el: '#service',
-   data: {
-      text : "Join us for worship and God's word every Saturday at 6pm"
-   }
+var service = new Vue({
+  el: '#app',
+  data: {
+  	text: "Join us for worship and God's word every Saturday at 6pm",
+    info: 'We will not have service on Saturday the 22nd'
+  }
 });
 
 // Donation button
