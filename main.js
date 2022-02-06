@@ -26,7 +26,7 @@ var sermons = new Vue({
         props: ['link','speaker'],
         template: `
         <div>
-          <iframe v-bind:src="link" height="200" width="500"></iframe>
+          <iframe class="sermonLink" v-bind:src="link" height="200" width="500"></iframe>
           <p class="speaker">{{speaker}}</p>
         </div>`
       }
@@ -84,6 +84,9 @@ if (window.matchMedia('(max-width: 600px)').matches)
         $(".mobileHide").hide(250);
     });
 	$(".mobileShow").show(250);
+	$(".sermonLink").each(function(){
+			$(".sermonLink").css("width",300);
+	});
 }
 else{
 	$("#moreMedia").click(function(){
