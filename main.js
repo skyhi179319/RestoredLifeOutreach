@@ -5,7 +5,7 @@ var service = new Vue({
   el: '#app',
   data: {
   	text: "Join us for worship and God's word every Saturday at 6pm",
-    info: 'We will not have service on Saturday the 22nd'
+    info: "Pastor Don Brendtro is speaking today, February 5th"
   }
 });
 
@@ -18,6 +18,20 @@ var  paypal = new Vue({
       }
    }
 });
+// Sermon Page
+var sermons = new Vue({
+  el: '#sermon',
+  components:{
+      'sermon-audio': {
+        props: ['link','speaker'],
+        template: `
+        <div>
+          <iframe v-bind:src="link" height="200" width="500"></iframe>
+          <p>{{speaker}}</p>
+        </div>`
+      }
+  }
+})
 
 // Contact Page
 var  phone = new Vue({
