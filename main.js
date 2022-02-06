@@ -27,7 +27,7 @@ var sermons = new Vue({
         template: `
         <div>
           <iframe v-bind:src="link" height="200" width="500"></iframe>
-          <p class="sermon_speaker">{{speaker}}</p>
+          <p class="speaker">{{speaker}}</p>
         </div>`
       }
   }
