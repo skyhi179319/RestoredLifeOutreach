@@ -23,22 +23,22 @@ var sermons = new Vue({
   el: '#sermon',
   components:{
       'sermon-audio': {
-        props: ['link','speaker','date'],
+        props: ['link','speaker','title','date'],
         template: `
         <div>
           <iframe class="sermonLink" v-bind:src="link" height="300" width="500"></iframe>
 		  <div v-if="date === ''">
             <p class="speaker"> <i class="fa-solid fa-user"></i> {{speaker}}</p>
-            <p style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p> 
+            <p class="speaker" style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p> 
           </div>
           <div v-else-if="speaker === ''" >
-            <p style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p> 
+            <p class="speaker"style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p> 
             <p class="speaker" ><i class="fa-solid fa-calendar"></i> {{date}}</p>
           </div>
-          <div style="display: flex;" v-else>
+          <div style="display: flex; width: max-content;" v-else>
             <p class="speaker"><i class="fa-solid fa-user"></i> {{speaker}}</p>
-            <p style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p>  
-            <p style="margin-left: 10px;"><i class="fa-solid fa-calendar"></i> {{date}}</p>
+            <p class="speaker" style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p>  
+            <p class="speaker" style="margin-left: 10px;"><i class="fa-solid fa-calendar"></i> {{date}}</p>
           </div>
         </div>`
       }
