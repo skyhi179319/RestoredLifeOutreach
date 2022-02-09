@@ -91,6 +91,7 @@ var sermonDots = new Vue({
         template: `
           <div class="dot-container">
             <span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
           </div>
           `
       }
@@ -104,9 +105,11 @@ var carousel = new Vue({
           <div class="slideshow-container" id="sermon">
 
             <div class="mySlides">
-              <sermon-audio link="https://www.youtube.com/embed/F6z082bsqDk" speaker="Don Brendtro" title="" date="2/5/22"></sermon-audio>
+              <sermon-audio link="https://www.youtube.com/embed/F6z082bsqDk" speaker="Don Brendtro" title="" date="2/5/22"></sermon-audio> 
             </div>
-			
+			<div class="mySlides">
+              <sermon-audio link="" speaker="" title="" date="2/12/22"></sermon-audio> 
+            </div>
             <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-arrow-left"></i></a>
             <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-arrow-right"></i></a>
 			
@@ -124,7 +127,7 @@ var sermons = new Vue({
         template: `
          <div>
           <iframe v-if="link !== ''" class="sermonLink" v-bind:src="link" height="300" width="500"></iframe>
-         <div style="border-style: inset;height: 300px;" v-if="link === ''">
+          <div class="sermonFill" style="border-style: inset;height: 300px;margin-left: auto;margin-right: auto;" v-if="link === ''">
             <div v-if="speaker && date !== ''">
               <p style="margin-top: 130px;">
                 Come join us on {{date}} as {{speaker}} will be speaking.
@@ -135,7 +138,7 @@ var sermons = new Vue({
               <p style="font-style: italic;margin-top: 130px">Service will be posted by 11:59pm on {{date}}</p>
             </div>
           </div>
-	  <div v-if="date === ''">
+		  <div v-if="date === ''">
             <p class="speaker"> <i class="fa-solid fa-user"></i> {{speaker}}</p>
             <p class="speaker" style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p> 
           </div>
