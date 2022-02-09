@@ -123,8 +123,19 @@ var sermons = new Vue({
         props: ['link','speaker','title','date'],
         template: `
          <div>
-          <iframe class="sermonLink" v-bind:src="link" height="300" width="500"></iframe>
-		      <div v-if="date === ''">
+          <iframe v-if="link !== ''" class="sermonLink" v-bind:src="link" height="300" width="500"></iframe>
+          <div style="border-style: inset;height: 300px;" v-if="link === ''">
+            <div v-if="speaker && date !== ''">
+              <p style="margin-top: 130px;">
+                Come join us on {{date}} as {{speaker}} will be speaking.
+              </p>
+              <p style="font-style: italic;">Service will be posted by 11:59pm on {{date}}</p>
+            </div>
+	      <div v-if="speaker && date === '''">
+		<p style="font-style: italic;">Service will be posted by 11:59pm on {{date}}</p>
+	      </div>
+          </div>
+	  <div v-if="date === ''">
             <p class="speaker"> <i class="fa-solid fa-user"></i> {{speaker}}</p>
             <p class="speaker" style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p> 
           </div>
