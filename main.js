@@ -106,10 +106,10 @@ var carousel = new Vue({
             <div class="mySlides">
               <sermon-audio link="https://www.youtube.com/embed/F6z082bsqDk" speaker="Don Brendtro" title="" date="2/5/22"></sermon-audio>
             </div>
-			<!--
+			
             <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-arrow-left"></i></a>
             <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-arrow-right"></i></a>
-			-->
+			
 
           </div>
           `
@@ -141,6 +141,11 @@ var sermons = new Vue({
       }
   }
 })
+var slides = document.getElementsByClassName("mySlides");
+if(slides.length === 1){
+  $(".prev").css("display","none");
+  $(".next").css("display","none");
+}
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -154,7 +159,6 @@ function currentSlide(n) {
 
 function showSlides(n) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}    
   if (n < 1) {slideIndex = slides.length}
