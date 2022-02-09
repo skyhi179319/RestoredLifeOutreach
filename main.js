@@ -18,32 +18,6 @@ var  paypal = new Vue({
       }
    }
 });
-// Sermon Page
-var sermons = new Vue({
-  el: '#sermon',
-  components:{
-      'sermon-audio': {
-        props: ['link','speaker','title','date'],
-        template: `
-        <div>
-          <iframe class="sermonLink" v-bind:src="link" height="300" width="500"></iframe>
-		  <div v-if="date === ''">
-            <p class="speaker"> <i class="fa-solid fa-user"></i> {{speaker}}</p>
-            <p class="speaker" style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p> 
-          </div>
-          <div v-else-if="speaker === ''" >
-            <p class="speaker"style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p> 
-            <p class="speaker" ><i class="fa-solid fa-calendar"></i> {{date}}</p>
-          </div>
-          <div style="display: flex; width: max-content;" v-else>
-            <p class="speaker"><i class="fa-solid fa-user"></i> {{speaker}}</p>
-            <p class="speaker" style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p>  
-            <p class="speaker" style="margin-left: 10px;"><i class="fa-solid fa-calendar"></i> {{date}}</p>
-          </div>
-        </div>`
-      }
-  }
-})
 
 // Contact Page
 var  phone = new Vue({
@@ -96,9 +70,6 @@ if (window.matchMedia('(max-width: 600px)').matches)
         $(".mobileHide").hide(250);
     });
 	$(".mobileShow").show(250);
-	$(".sermonLink").each(function(){
-			$(".sermonLink").css("width",300);
-	});
 }
 else{
 	$("#moreMedia").click(function(){
@@ -111,4 +82,88 @@ else{
 			$(".hide").hide(250);
 		});
 	});
+}
+// Sermon Page
+var sermonDots = new Vue({
+  el: '#dots',
+  components:{
+      'sermon-dots': {
+        template: `
+          <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+          </div>
+          `
+      }
+  }
+})
+var carousel = new Vue({
+  el: '#carousel',
+  components:{
+      'sermon-carousel': {
+        template: `
+          <div class="slideshow-container" id="sermon">
+
+            <div class="mySlides">
+              <sermon-audio link="https://www.youtube.com/embed/F6z082bsqDk" speaker="Don Brendtro" title="" date="2/5/22"></sermon-audio>
+            </div>
+			<!--
+            <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-arrow-left"></i></a>
+            <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-arrow-right"></i></a>
+			-->
+
+          </div>
+          `
+      }
+  }
+})
+var sermons = new Vue({
+  el: '#sermon',
+  components:{
+      'sermon-audio': {
+        props: ['link','speaker','title','date'],
+        template: `
+         <div>
+          <iframe class="sermonLink" v-bind:src="link" height="300" width="500"></iframe>
+		      <div v-if="date === ''">
+            <p class="speaker"> <i class="fa-solid fa-user"></i> {{speaker}}</p>
+            <p class="speaker" style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p> 
+          </div>
+          <div v-else-if="speaker === ''" >
+            <p class="speaker"style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p> 
+            <p class="speaker" ><i class="fa-solid fa-calendar"></i> {{date}}</p>
+          </div>
+          <div style="display: flex;width: fit-content;margin-left: auto;margin-right: auto;" v-else>
+            <p class="speaker"><i class="fa-solid fa-user"></i> {{speaker}}</p>
+            <p class="speaker" style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p>  
+            <p class="speaker" style="margin-left: 10px;"><i class="fa-solid fa-calendar"></i> {{date}}</p>
+          </div>
+        </div>`
+      }
+  }
+})
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
 }
