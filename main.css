@@ -44,8 +44,14 @@ video{
   
   text-align: center;
 }
+.sermonFill{
+	width:500px
+}
 @media only screen and (max-width: 600px) {
   .sermonLink{
+	  width: 300px;
+  }
+  .sermonFill{
 	  width: 300px;
   }
 }
@@ -65,6 +71,11 @@ video{
 }
 
 /* Position the "next button" to the right */
+.prev{
+	position: absolute;
+	left: 0;
+	border-radius: 3px 0 0 3px;
+}
 .next {
   position: absolute;
   right: 0;
