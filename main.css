@@ -54,6 +54,12 @@ video{
   .sermonFill{
 	  width: 300px;
   }
+  .serviceFillFont{
+	  font-size: 14px;
+  }
+  .servicePostFont{
+	  font-size: 13px;
+  }
 }
 /* Next & previous buttons */
 .prev, .next {
@@ -243,5 +249,9 @@ video{
 
 .fa-facebook {
   background: #3B5998;
+  color: white;
+}
+.fa-youtube {
+  background: #bb0000;
   color: white;
 }
