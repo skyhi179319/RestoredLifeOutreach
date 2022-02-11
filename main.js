@@ -1,11 +1,12 @@
 // Vue.js
+Vue.config.devtools = true;
 
 // Home Page
 var service = new Vue({
   el: '#app',
   data: {
   	text: "Join us for worship and God's word every Saturday at 6pm",
-    info: "Pastor Don Brendtro is speaking today, February 5th"
+    info: ""
   }
 });
 
@@ -39,6 +40,14 @@ var  facebook = new Vue({
    components:{
       'facebook-icon': {
          template : '<a href="https://www.facebook.com/RestoredLifeOutreach/" class="fa fa-facebook"></a>'
+      }
+   }
+});
+var  youtube = new Vue({
+   el: '#youtubeEle',
+   components:{
+      'youtube-icon': {
+         template : '<a href="https://www.youtube.com/channel/UCGzpBSJ7XOZ_QaxYlDv2P0g" class="fa fa-youtube"></a>'
       }
    }
 });
@@ -129,13 +138,13 @@ var sermons = new Vue({
           <iframe v-if="link !== ''" class="sermonLink" v-bind:src="link" height="300" width="500"></iframe>
           <div class="sermonFill" style="border-style: inset;height: 300px;margin-left: auto;margin-right: auto;" v-if="link === ''">
             <div v-if="speaker && date !== ''">
-              <p style="margin-top: 130px;">
+              <p class="serviceFillFont" style="margin-top: 130px;">
                 Come join us on {{date}} as {{speaker}} will be speaking.
               </p>
-              <p style="font-style: italic;">Service will be posted by 11:59pm on {{date}}</p>
+              <p class="servicePostFont" style="font-style: italic;">Service will be posted by 11:59pm on {{date}}</p>
             </div>
 			<div v-if="speaker === ''">
-              <p style="font-style: italic;margin-top: 130px">Service will be posted by 11:59pm on {{date}}</p>
+              <p class="servicePostFont" style="font-style: italic;margin-top: 130px">Service will be posted by 11:59pm on {{date}}</p>
             </div>
           </div>
 		  <div v-if="date === ''">
