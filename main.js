@@ -39,7 +39,7 @@ var  facebook = new Vue({
    el: '#facebookEle',
    components:{
       'facebook-icon': {
-         template : '<a href="https://www.facebook.com/RestoredLifeOutreach/" class="fa fa-facebook"></a>'
+         template : '<a href="https://www.facebook.com/RestoredLifeOutreach/" class="fa fa-facebook" target="_blank"></a>'
       }
    }
 });
@@ -47,7 +47,7 @@ var  youtube = new Vue({
    el: '#youtubeEle',
    components:{
       'youtube-icon': {
-         template : '<a href="https://www.youtube.com/channel/UCGzpBSJ7XOZ_QaxYlDv2P0g" class="fa fa-youtube"></a>'
+         template : '<a href="https://www.youtube.com/channel/UCGzpBSJ7XOZ_QaxYlDv2P0g" class="fa fa-youtube" target="_blank"></a>'
       }
    }
 });
