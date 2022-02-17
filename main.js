@@ -101,6 +101,7 @@ var sermonDots = new Vue({
           <div class="dot-container">
             <span class="dot" onclick="currentSlide(1)"></span>
 			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
           </div>
           `
       }
@@ -112,17 +113,17 @@ var carousel = new Vue({
       'sermon-carousel': {
         template: `
           <div class="slideshow-container" id="sermon">
-
+            <div class="mySlides">
+              <sermon-audio link="https://www.youtube.com/embed/cjUCtGVo1Q0" speaker="David Patterson" title="7 Ways to Prepare for Jesus' Return" date="2/12/22"></sermon-audio> 
+            </div>
             <div class="mySlides">
               <sermon-audio link="https://www.youtube.com/embed/F6z082bsqDk" speaker="Don Brendtro" title="" date="2/5/22"></sermon-audio> 
             </div>
 			<div class="mySlides">
-              <sermon-audio link="" speaker="" title="" date="2/12/22"></sermon-audio> 
+              <sermon-audio link="" speaker="" title="" date="2/19/22"></sermon-audio> 
             </div>
-            <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-arrow-left"></i></a>
+			<a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-arrow-left"></i></a>
             <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-arrow-right"></i></a>
-			
-
           </div>
           `
       }
@@ -155,7 +156,7 @@ var sermons = new Vue({
             <p class="speaker"style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p> 
             <p class="speaker" ><i class="fa-solid fa-calendar"></i> {{date}}</p>
           </div>
-          <div style="display: flex;width: fit-content;margin-left: auto;margin-right: auto;" v-else>
+          <div class="sermonInfo" style="display: flex;" v-else>
             <p class="speaker"><i class="fa-solid fa-user"></i> {{speaker}}</p>
             <p class="speaker" style="margin-left: 10px;" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p>  
             <p class="speaker" style="margin-left: 10px;"><i class="fa-solid fa-calendar"></i> {{date}}</p>
