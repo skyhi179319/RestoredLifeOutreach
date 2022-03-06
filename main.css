@@ -47,6 +47,12 @@ video{
 .sermonFill{
 	width:500px
 }
+.sermonInfo{
+    display: flex;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
 @media only screen and (max-width: 600px) {
   .sermonLink{
 	  width: 300px;
@@ -59,6 +65,11 @@ video{
   }
   .servicePostFont{
 	  font-size: 13px;
+  }
+  .sermonInfo{
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 /* Next & previous buttons */
@@ -193,7 +204,7 @@ video{
     cursor: pointer;
 	-webkit-user-select: none;
     -moz-user-select: none;
-    user-select: none;#5c5982;
+    user-select: none;
     background-color: transparent;
     border: 1px solid blue;
     padding: .375rem .75rem;
