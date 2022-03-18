@@ -1,3 +1,5 @@
+
+   
 // Vue.js
 Vue.config.devtools = true;
 
@@ -200,34 +202,38 @@ else{
 }
 // Sermon Page
 var sermonDots = new Vue({
-  el: '#dots',
-  components:{
-      'sermon-dots': {
-        template: `
+    el: '#dots',
+    components:{
+        'sermon-dots': {
+            template: `
           <div class="dot-container">
             <span class="dot" onclick="currentSlide(1)"></span>
-			<span class="dot" onclick="currentSlide(2)"></span>
-			<span class="dot" onclick="currentSlide(3)"></span>
-			<span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
 			<span class="dot" onclick="currentSlide(5)"></span>
           </div>
           `
-      }
-  }
+        }
+    }
 })
 var carousel = new Vue({
-  el: '#carousel',
-  components:{
-      'sermon-carousel': {
-        template: `
+    el: '#carousel',
+    components:{
+        'sermon-carousel': {
+            template: `
           <div class="slideshow-container" id="sermon">
-		  <div class="mySlides">
-              <sermon-audio link="" speaker="" title="" date="3/12/22"></sermon-audio> 
-            </div>
+			<div class="mySlides">
+              <sermon-audio link="" speaker="Kelly Patterson" title="That One Thing" date="3/19/22"></sermon-audio> 
+			</div>
 		    <div class="mySlides">
+              <sermon-audio link="https://www.youtube.com/embed/lKCL8tVreFM" speaker="Aleah" title="" date="3/12/22"></sermon-audio> 
+            </div>
+		        <div class="mySlides">
               <sermon-audio link="https://www.youtube.com/embed/tWzchnT3uvs" speaker="David Patterson" title="Who Says You Can't" date="2/26/22"></sermon-audio> 
             </div>
-			<div class="mySlides">
+			      <div class="mySlides">
               <sermon-audio link="https://www.youtube.com/embed/jc1jNdequkI" speaker="Kelly Patterson" title="Let Your Yes Be Yes" date="2/19/22"></sermon-audio> 
             </div>
             <div class="mySlides">
@@ -240,8 +246,8 @@ var carousel = new Vue({
             <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-arrow-right"></i></a>
           </div>
           `
-      }
-  }
+        }
+    }
 })
 var sermons = new Vue({
   el: '#sermon',
@@ -278,6 +284,39 @@ var sermons = new Vue({
         </div>`
       }
   }
+})
+var wall = new Vue({
+    el: '#pastSermonWall',
+    components:{
+        'past-sermons': {
+            template: `
+            <div id="pastSermons">
+              
+            </div>`
+        }
+    }
+})
+var past_sermons = new Vue({
+    el: '#pastSermons',
+    components:{
+        'past-audio': {
+            props: ['link','speaker','title','date'],
+            template: `
+            <div>
+                <div class="wallColumn">
+                    <div class="wallCard">
+                      <iframe v-if="link !== ''" class="sermonLink" v-bind:src="link" height="200" width="200"></iframe>
+                      <div class="wallContainer">
+                        <p>{{speaker}}</p>
+                        <p class="wallTitle">{{title}}</p>
+                        <p class="wallTitle">{{date}}</p>
+                      </div>
+                    </div>
+                </div>
+                
+            </div>`
+        }
+    }
 })
 var slides = document.getElementsByClassName("mySlides");
 if(slides.length === 1){
