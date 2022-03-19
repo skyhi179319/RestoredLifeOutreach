@@ -93,6 +93,10 @@ video{
     margin-right: auto;
     margin-left: auto;
   }
+  .wallColumn {
+    width: 100%;
+    display: block;
+  }
 }
 /* Next & previous buttons */
 .prev, .next {

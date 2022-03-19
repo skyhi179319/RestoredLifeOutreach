@@ -212,7 +212,6 @@ var sermonDots = new Vue({
             <span class="dot" onclick="currentSlide(3)"></span>
             <span class="dot" onclick="currentSlide(4)"></span>
             <span class="dot" onclick="currentSlide(5)"></span>
-			<span class="dot" onclick="currentSlide(5)"></span>
           </div>
           `
         }
@@ -238,9 +237,6 @@ var carousel = new Vue({
             </div>
             <div class="mySlides">
               <sermon-audio link="https://www.youtube.com/embed/cjUCtGVo1Q0" speaker="David Patterson" title="7 Ways to Prepare for Jesus' Return" date="2/12/22"></sermon-audio> 
-            </div>
-            <div class="mySlides">
-              <sermon-audio link="https://www.youtube.com/embed/F6z082bsqDk" speaker="Don Brendtro" title="" date="2/5/22"></sermon-audio> 
             </div>
 			<a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-arrow-left"></i></a>
             <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-arrow-right"></i></a>
@@ -290,8 +286,8 @@ var wall = new Vue({
     components:{
         'past-sermons': {
             template: `
-            <div id="pastSermons">
-              
+			<div id="pastSermons">
+              <past-audio link="https://www.youtube.com/embed/F6z082bsqDk" speaker="Don Brendtro" title="No Title Available" date="2/5/22"></past-audio>
             </div>`
         }
     }
@@ -307,9 +303,10 @@ var past_sermons = new Vue({
                     <div class="wallCard">
                       <iframe v-if="link !== ''" class="sermonLink" v-bind:src="link" height="200" width="200"></iframe>
                       <div class="wallContainer">
-                        <p>{{speaker}}</p>
-                        <p class="wallTitle">{{title}}</p>
-                        <p class="wallTitle">{{date}}</p>
+                        <p><i class="fa-solid fa-user"></i> {{speaker}}</p>
+                        <p class="wallTitle" v-if="title === ''"><i class="fa-solid fa-book-bible"></i> No Title Available</p>
+                        <p class="wallTitle" v-if="title !== ''"><i class="fa-solid fa-book-bible"></i> {{title}}</p>
+                        <p class="wallTitle"><i class="fa-solid fa-calendar"></i> {{date}}</p>
                       </div>
                     </div>
                 </div>
