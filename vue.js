@@ -55,7 +55,7 @@ var googleEle = new Vue({
     el: '#google_map',
     components:{
         'google-map': {
-            template : '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2866.602015939865!2d-103.19442468466086!3d44.07092613333649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x877d4356f0bd2447%3A0x3452ddd0519928a6!2sRestored%20Life%20Outreach%20Fellowship!5e0!3m2!1sen!2sus!4v1634611452324!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+            template : '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11466.810924212492!2d-103.2284317!3d44.0688467!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x69abdb0fb4fcd41f!2sLiving%20Word%20Church!5e0!3m2!1sen!2sus!4v1658603761361!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
         }
     }
 });
@@ -67,6 +67,10 @@ var mobileSet = new Vue({
             template: `
             <div>
                  <div class="column mobileShow mobileColumn" style = "display: none;">
+					<img src="/files/theme/images/4_new_church.jpeg">
+					<img src="/files/theme/images/12_new_church.jpeg">
+					<img src="/files/theme/images/10_new_church.jpeg">
+					<img src="/files/theme/images/14_new_church.jpeg">
 					<img src="/files/theme/images/1.png">
 					<img src="/files/theme/images/8.jpeg">
 					<img src="/files/theme/images/12.jpeg">
@@ -104,6 +108,8 @@ var photoset1 = new Vue({
         'photo-one': {
             template: `
             <div>
+				<img src="/files/theme/images/4_new_church.jpeg">
+				<img src="/files/theme/images/12_new_church.jpeg">
                 <img src="/files/theme/images/5.png">
                 <img src="/files/theme/images/4.jpg">
                 <img src="/files/theme/images/3.png">
@@ -123,6 +129,8 @@ var photoset2 = new Vue({
         'photo-two': {
             template: `
             <div>
+				<img src="/files/theme/images/10_new_church.jpeg">
+				<img src="/files/theme/images/14_new_church.jpeg">
                 <img src="/files/theme/images/1.png">
                 <img src="/files/theme/images/8.jpeg">
                 <img src="/files/theme/images/12.jpeg">
@@ -226,20 +234,20 @@ var carousel = new Vue({
             template: `
           <div class="slideshow-container" id="sermon">
 			<div class="mySlides">
-              <sermon-audio link="" speaker="Lorene Ness" title="" date="3/26/22"></sermon-audio> 
+				<sermon-audio link="https://www.youtube.com/embed/68D_A69iOWk" speaker="How to Receive Power from God" date="12/17/22"></sermon-audio>
 			</div>
 			<div class="mySlides">
-              <sermon-audio link="https://www.youtube.com/embed/E-4C-igzHdo" speaker="Kelly Patterson" title="That One Thing" date="3/19/22"></sermon-audio> 
+				<sermon-audio link="https://www.youtube.com/embed/zCLwYH_yVxo" speaker="Wade Blend" title="Barn Banners Gospel Message" date="12/3/22"></sermon-audio> 
 			</div>
-		    <div class="mySlides">
-              <sermon-audio link="https://www.youtube.com/embed/lKCL8tVreFM" speaker="Aleah" title="" date="3/12/22"></sermon-audio> 
-            </div>
-		        <div class="mySlides">
-              <sermon-audio link="https://www.youtube.com/embed/tWzchnT3uvs" speaker="David Patterson" title="Who Says You Can't" date="2/26/22"></sermon-audio> 
-            </div>
-			      <div class="mySlides">
-              <sermon-audio link="https://www.youtube.com/embed/jc1jNdequkI" speaker="Kelly Patterson" title="Let Your Yes Be Yes" date="2/19/22"></sermon-audio> 
-            </div>
+		  	<div class="mySlides">
+              <sermon-audio link="https://www.youtube.com/embed/QNZ9CqwNF-4" speaker="Kelly Patterson" title="The Armor Of God - Pt. 4 -What You May Not Know About Maintaining the Belt of Truth" date="10/8/22"></sermon-audio> 
+			</div>
+		  	<div class="mySlides">
+				<sermon-audio link="https://www.youtube.com/embed/Jm6lcz9Ua1M" speaker="David Patterson" title="Trust the Process" date="11/5/22"><sermon-audio>
+			</div>
+			<div class="mySlides">
+              <sermon-audio link="https://www.youtube.com/embed/nQfiMRUvXs4" speaker="David Patterson" title="Why is a Christian a New Creation?" date="10/29/22"></sermon-audio> 
+			</div>
 			<a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-arrow-left"></i></a>
             <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-arrow-right"></i></a>
           </div>
@@ -255,7 +263,7 @@ var sermons = new Vue({
             template: `
          <div>
           <iframe v-if="link !== ''" class="sermonLink" v-bind:src="link" height="300" width="500"></iframe>
-          <div class="sermonFill" style="border-style: inset;height: 300px;margin-left: auto;margin-right: auto;" v-if="link === ''">
+		  <div class="sermonFill" style="border-style: inset;height: 300px;margin-left: auto;margin-right: auto;" v-if="link === ''">
             <div v-if="speaker && date !== ''">
               <p class="serviceFillFont" style="margin-top: 130px;">
                 Come join us on {{date}} as {{speaker}} will be speaking.
@@ -289,9 +297,44 @@ var wall = new Vue({
         'past-sermons': {
             template: `
 			<div id="pastSermons">
-              <past-audio link="https://www.youtube.com/embed/F6z082bsqDk" speaker="Don Brendtro" title="" date="2/5/22"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/F6z082bsqDk" speaker="Don Brendtro" title="" date="2/5/22"></past-audio>
 			  <past-audio link="https://www.youtube.com/embed/cjUCtGVo1Q0" speaker="David Patterson" title="7 Ways to Prepare for Jesus' Return" date="2/12/22"></past-audio>
-            </div>`
+			  <past-audio link="https://www.youtube.com/embed/jc1jNdequkI" speaker="Kelly Patterson" title="Let Your Yes Be Yes" date="2/19/22"></past-audio>
+			  <div style="display: inline;border: 2px solid #ffffff;"></div>
+			  <past-audio link="https://www.youtube.com/embed/tWzchnT3uvs" speaker="David Patterson" title="Who Says You Can't" date="2/26/22"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/lKCL8tVreFM" speaker="Aleah" title="" date="3/12/22"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/E-4C-igzHdo" speaker="Kelly Patterson" title="That One Thing" date="3/19/22"></past-audio>
+			  <div style="display: inline;border: 2px solid #ffffff;"></div>
+			  <past-audio link="https://www.youtube.com/embed/HT_QDXtNweI" speaker="Lorene Ness" title="Letting Go" date="3/26/22"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/Pwu854M3IhU" speaker="No Speaker" title="Worship" date="4/2/22"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/E96E61S1Fms" speaker="David Patterson" title="What Does God Think of Preppers" date="4/9/22"></past-audio>
+			  <div style="display: inline;border: 2px solid #ffffff;"></div>
+ 			  <past-audio link="https://www.youtube.com/embed/FHtRWtm-1PE" speaker="Lorene Ness" title="The Resurrection Through the Eyes of Magdalene" date="4/16/22" height="130"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/Ciu_rYJN1ms" speaker="Tim Blankenship" title="Time" date="4/30/22"></past-audio>
+			  <past-audio ink="https://www.youtube.com/embed/jqcu1p3Gk_E" speaker="Kelly Patterson" title="Whew!" date="5/14/22"></past-audio>
+			  <div style="display: inline;border: 2px solid #ffffff;"></div>
+			  <past-audio link="https://www.youtube.com/embed/U-Td_LZ3zvs" speaker="David Hersman" title="Missionary Presentation" date="5/21/22"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/R1WjAhLWEMQ" speaker="Tim Blankenship" title="Great I Am" date="5/28/22"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/JUiNDBHnWRs" speaker="Lorene Ness" title="If We Only Knew" date="6/4/22"></past-audio>
+			  <div style="display: inline;border: 2px solid #ffffff;"></div>
+			  <past-audio link="https://www.youtube.com/embed/vyQ_CzKNrU4" speaker="Aleah" title="" date="6/11/22"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/Wc_1nhMlIEY" speaker="Kelly Patterson" title="The Sovereignty Of God" date="7/23/22"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/mU5MH-tJGCM" speaker="Kelly Patterson" title="The Armor of God - What You May Not Know" date="7/30/22"></past-audio>
+			  <div style="display: inline;border: 2px solid #ffffff;"></div>
+			  <past-audio link="https://www.youtube.com/embed/pkXofLcjTFA" speaker="Kelly Patterson" title="Kelly Patterson - The Armor Of God - What You May Not Know Part 2" date="8/6/22"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/G9wP-WFTO8g" speaker="Kelly Patterson" title="On a Wing and a Prayer?" date="8/13/22"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/cK874Aa22wY" speaker="Lorene Ness" title="I will remember Remembering what God has done when you are facing Goliath" date="8/20/22"></past-audio>
+			  <div style="display: inline;border: 2px solid #ffffff;"></div>
+			  <past-audio link="https://www.youtube.com/embed/6798yC5nyaQ" speaker="David Patterson" title="Why Do Thing I Don't Wont To Do" date="8/27/22"></past-audio>
+			  <past-aduio link="https://www.youtube.com/embed/BQQUGT2E7Xs" speaker="Kelly Patterson" title="The Armor Of God: What You May Not Know Part 3" date="9/3/22"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/Q2jngS1glEk" speaker="Victoria Blankenship" title="Ministry... You Can Do It" date="9/24/22"></past-audio>
+			  <div style="display: inline;border: 2px solid #ffffff;"></div>
+			  <past-audio link="https://www.youtube.com/embed/h2HbQN-mxfM" speaker="Lorene Ness" title="How To Hear the Voice of the Lord In A Noisy World" date="10/1/22"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/Ms54NoGjLu0" speaker="David Paterson" title="" date="10/8/22"></past-audio>
+			  <past-audio link="https://www.youtube.com/embed/THY2wSnq9WI" speaker="Gina Dvorak" title="Are We Ready?" date="10/15/22"></past-audio>
+			  <div style="display: inline;border: 2px solid #ffffff;"></div>
+			  <past-audio link="https://www.youtube.com/embed/DLXxTI8VYX8" speaker="David Patterson" title="Satan's Fifth Column" date="10/22/22"></past-audio>
+			</div>`
         }
     }
 })
@@ -299,12 +342,13 @@ var past_sermons = new Vue({
     el: '#pastSermons',
     components:{
         'past-audio': {
-            props: ['link','speaker','title','date'],
+            props: ['link','speaker','title','date','height'],
             template: `
             <div>
                 <div class="wallColumn">
                     <div class="wallCard">
-                      <iframe v-if="link !== ''" class="sermonLink" v-bind:src="link" height="200" width="200"></iframe>
+                      <iframe v-if="height !== ''" class="sermonLink" v-bind:src="link" v-bind:height="height" width="200"></iframe>
+					  <iframe v-else class="sermonLink" v-bind:src="link" height="300" width="500"></iframe>
                       <div class="wallContainer">
                         <p><i class="fa-solid fa-user"></i> {{speaker}}</p>
                         <p class="wallTitle" v-if="title === ''"><i class="fa-solid fa-book-bible"></i> No Title Available</p>
